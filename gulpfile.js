@@ -26,15 +26,23 @@ const plugins = {
   ],
   ui: [
     'node_modules/bootstrap/dist/css/bootstrap.min.css',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js'
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/font-awesome/css/font-awesome.min.css',
+    'node_modules/font-awesome/fonts/fontawesome-webfont.eot',
+    'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
+    'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
   ]
 }
 
 async function setupPlugin () {
   Object.keys(plugins).forEach(file => {
     plugins[file].forEach(row => {
-      let name = row.split('/')[1]
+      let files = row.split('/') 
+      let name = files[1]
       let ext = row.split('.').pop()
+
+      if (ext === 'eot' || ext == 'woff' || ext == 'woff2') ext = files[files.length - 2]
+
       let dir = `${pluginDir}/${name}/${ext}`
       src(row)
       .pipe(dest(dir))
@@ -43,16 +51,15 @@ async function setupPlugin () {
 }
 
 function css () {
-  console.log('css tasks')
-  return src('src/scss/**/*.scss')
+  return src('src/scss/main.scss')
   .pipe(plumber())
-  .pipe(concat('app.min.css'))
   .pipe(
     sass({
       outputStyle: 'compressed'
     })
     .on('error', sass.logError)
   )
+  .pipe(concat('app.min.css'))
   .pipe(dest(cssDir))
 }
 
