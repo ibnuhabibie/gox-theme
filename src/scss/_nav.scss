@@ -27,6 +27,7 @@ nav {
                 background-size: cover;
                 background-position: center;
                 border-bottom-left-radius: 12px;
+                transition: .5 ease;
             }
 
             .main-menu-bg {
@@ -97,6 +98,21 @@ nav {
             transition: .5s ease;
             z-index: 1;
 
+            .menu-toggle {
+                position: absolute;
+                top: 30px;
+                right: 0;
+                transition: .5s ease;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background: $primary;
+                color: white;
+                z-index: 1;
+            }
+
             h1.page-title {
                 margin-top: 20px;
                 margin-right: 10px;
@@ -105,7 +121,8 @@ nav {
                 font-weight: bold;
                 color: $primary;
                 background: white;
-                border-radius: 12px;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
                 padding-left: 15px;
                 line-height: 60px;
             }
@@ -151,6 +168,14 @@ nav {
                                 color: $primary;
                             }
                         }
+
+                        &.sub-level {
+                            padding-left: 0;
+
+                            li {
+                                padding-left: 40px;
+                            }
+                        }
                     }
 
                     a {
@@ -170,12 +195,28 @@ nav {
 
 body {
     &.min {
+
         main {
             padding-left: 70px;    
         }
 
         .sub-menu {
             margin-left: -255px;
+        }
+
+        nav .menu .sub-menu .menu-toggle {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 0;
+            border-bottom-right-radius: 12px;
+            border-top-right-radius: 12px;
+            right: -60px;
+            top: 20px;
+            font-size: 20px;
+            background: white;
+            color: $primary;
+            z-index: 3;
         }
     }
 }

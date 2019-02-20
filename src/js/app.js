@@ -1,3 +1,3 @@
-$('nav').click(function () {
+$('.menu-toggle').click(function () {
     $('body').toggleClass('min')
 })

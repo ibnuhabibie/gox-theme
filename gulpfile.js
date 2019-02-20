@@ -17,6 +17,8 @@ const nunjucks = require('gulp-nunjucks-render')
 // server
 const browserSync = require('browser-sync').create()
 
+const data = require('./src/data')
+
 const cssDir = 'dist/css'
 const jsDir = 'dist/js'
 const pluginDir = 'dist/vendor'
@@ -73,19 +75,12 @@ function js () {
 
 function template () {
   return src('src/templates/**/*.html')
-  .pipe(nunjucks({
-    path: 'src/templates',
-    data: {
-      name: 'Sindre',
-      images: [{
-        src: 'image-one.png',
-        alt: 'Image one alt text'
-      }, {
-        src: 'image-two.png',
-        alt: 'Image two alt text'
-      }]
-    }
-  }))
+  .pipe(
+    nunjucks({
+      path: 'src/templates',
+      data: data
+    })
+  )
   .pipe(dest('dist'))
 }
 
