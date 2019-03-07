@@ -1,12 +1,14 @@
 const submenu = require('./submenu')
+const table = require('./table')
 
 module.exports = {
 	menu: [
-		{ name: 'Dashboard', icon: 'fa-home', path: '/' },
-		{ name: 'Components', icon: 'fa-pencil', path: '/' },
-		{ name: 'User', icon: 'fa-user', path: '/' },
-		{ name: 'System', icon: 'fa-gear', path: '/' },
-		{ name: 'Extension', icon: 'fa-bolt', path: '/'  }
+		{ name: 'Dashboard', icon: 'home', path: '/' },
+		{ name: 'Components', icon: 'box', path: '/' },
+		{ name: 'User', icon: 'users', path: '/' },
+		{ name: 'System', icon: 'settings', path: '/' },
+		{ name: 'Extension', icon: 'package', path: '/'  }
 	],
-	submenu
+	submenu,
+	table: table
 }

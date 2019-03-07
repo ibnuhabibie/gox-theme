@@ -1,0 +1,47 @@
+<thead>
+    <tr>
+        <th>
+            <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox">
+            </div>
+        </th>
+        <th>Images</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Restaurant</th>
+        <th>Category</th>
+        <th>Rating</th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    {% for row in table -%}
+    <tr>
+        <td>
+            <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox">
+            </div>
+        </td>
+        <td><img src="https://via.placeholder.com/125x80"></td>
+        <td>
+            <span class="bold">{{ row[0] }}</span>
+        </td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>
+            <h6><span class="badge badge-primary">{{ row[3] }}</span></h6>
+        </td>
+        <td><h6><span class="badge badge-secondary">{{ row[4] }}</span></h6></td>
+        <td>{{ row[5] }}</td>
+        <td>
+            <button class="btn btn-sm btn-danger">
+                <span><i class="fa fa-trash"></i> Delete</span>
+            </button>
+            <button class="btn btn-sm btn-secondary mt-sm-1">
+                <span><i class="fa fa-pencil"></i> Edit</span>
+            </button>
+        </td>
+    </tr>
+    {%- endfor %}
+</tbody>

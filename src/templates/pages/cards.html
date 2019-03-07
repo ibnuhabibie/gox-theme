@@ -9,4 +9,57 @@
         <h1 class="jumbotron-heading">Cards example</h1>
     </div>
 </section>
+<section class="px-5">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Default Card</span>
+                </div>
+                {% include "partials/cards/basic-content.njk" %}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card card-transparent">
+                <div class="card-header">
+                    <span class="card-title">Transparent Card</span>
+                </div>
+                {% include "partials/cards/basic-content.njk" %}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card separator">
+                <div class="card-header">
+                    <span class="card-title">Card Separator</span>
+                </div>
+                {% include "partials/cards/basic-content.njk" %}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-6">
+            <div class="card separator">
+                <div class="card-header">
+                    <span class="card-title">Card Tools</span>
+                    {% include "partials/cards/basic-controls.njk" %}
+                </div>
+                {% include "partials/cards/basic-content.njk" %}
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card bg-primary">
+                <div class="card-header">
+                    <span class="card-title">Background Card</span>
+                    {% include "partials/cards/basic-controls.njk" %}
+                </div>
+                <div class="card-body">
+                    <h3><span class="semi-bold">Lorem</span> Ipsum</h3>
+                    <p class="text-black">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, maiores eveniet neque error quia labore debitis, dignissimos libero beatae atque animi, nihil voluptate. Accusantium tenetur recusandae velit odio rerum commodi.</p>
+                    <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nesciunt modi commodi molestiae incidunt iure.</p>
+                    <button type="button" class="btn btn-secondary">Go somewhere</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

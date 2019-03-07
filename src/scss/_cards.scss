@@ -1,0 +1,89 @@
+.card {
+    transition:  .5s ease;
+
+    &.card-transparent {
+        border: none;
+        background: transparent;
+    }
+
+    &.card-fluid {
+        margin-left: 1px;
+
+        .card-body {
+            padding: 0;
+        }
+    }
+
+    .card-feedback {
+        background: rgba(255,255,255,.8);
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    .card-header {
+        background: none;
+        border-bottom: 0;
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            font-size: 12px;
+            font-weight: 500;
+            color: $primary;
+        }
+
+        .card-controls {
+            float: right;
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    width: 20px;
+                    display: inline-block;
+    
+                    svg {
+                        color: $primary;
+                        opacity: .8;
+                        width: 12px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        +.card-body {
+            padding-top: 0;
+        }
+    }
+
+    &.separator {
+        .card-header {
+            border-bottom: 1px solid rgba(0,0,0,.125);
+        }
+    }
+
+    &.card-maximized {
+        position: fixed!important;
+        left: 321px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 600;
+    }
+}
+
+body.min {
+    .card {
+        &.card-maximized {
+            left: 71px;
+        }
+    }
+}

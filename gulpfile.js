@@ -12,6 +12,7 @@ const plumber = require('gulp-plumber')
 // js
 const uglify = require('gulp-uglify')
 const optimizejs = require('gulp-optimize-js')
+const babel = require('gulp-babel')
 // template
 const nunjucks = require('gulp-nunjucks-render')
 // server
@@ -24,7 +25,8 @@ const jsDir = 'dist/js'
 const pluginDir = 'dist/vendor'
 const plugins = {
   script: [
-    'node_modules/jquery/dist/jquery.min.js'
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/feather-icons/dist/feather.min.js'
   ],
   ui: [
     'node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -67,6 +69,11 @@ function css () {
 
 function js () {
   return src('src/js/*.js')
+  .pipe(
+    babel({
+      presets: ['@babel/env']
+    })
+  )
   .pipe(optimizejs())
   .pipe(concat('app.min.js'))
   .pipe(uglify())
@@ -82,6 +89,11 @@ function template () {
     })
   )
   .pipe(dest('dist'))
+}
+
+function asset () {
+  return src('src/img/**/*')
+  .pipe(dest('dist/img'))
 }
 
 function serve (done) {
@@ -104,13 +116,15 @@ exports.css = css
 exports.js = js
 exports.plugin = setupPlugin
 exports.template = template
+exports.asset = asset
 exports.serve = serve
 
 exports.default = parallel(
   css,
   setupPlugin,
   js,
-  template
+  template,
+  asset
 )
 
 exports.watch = series(

@@ -25,21 +25,9 @@
     <link class="main-stylesheet" href="/css/app.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="{{ bodyClass }}">
-    {% include "partials/nav.njk" %}
-    <main class="{{ mainClass }}">
-        <div class="main-container">
-            <header>
-                <div>
-                    <span class="menu-toggle">
-                        <i class="fa fa-bars"></i>
-                    </span>
-                </div>
-            </header>
-            {% block content %}{% endblock %}
-        </div>
-    </main>
-    <script src="/vendor/jquery/js/jquery.min.js"></script>
+    {% block content %}{% endblock %}
     <script src="/vendor/feather-icons/js/feather.min.js"></script>
+    <script src="/vendor/jquery/js/jquery.min.js"></script>
     <script src="/js/app.min.js"></script>
 </body>
 </html>

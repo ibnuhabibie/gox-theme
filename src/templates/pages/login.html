@@ -1,0 +1,42 @@
+{% extends "layouts/default.njk" %}
+
+{% set bodyClass = "login" %}
+
+{% block content %}
+<section class="login-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="faded-bg"></div>
+            <div class="hidden-xs col-sm-7 col-md-8">
+                <div class="login-tm">
+                    <img class="img-responsive pull-left logo hidden-xs" src="http://localhost:8000/admin/assets/images/logo-icon-light.png" alt="Logo Icon">
+                    <div class="copy">
+                        <h1>Dashboard</h1>
+                        <p>Welcome to Gox Panel. Powered by Mungil Team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-4 login-sidebar">
+                <div class="login-content">
+                    <p>Sign into your account</p>
+                    <form>
+                        <div class="form-group form-group-default">
+                            <label>E-mail</label>
+                            <div class="controls">
+                                <input type="text" name="email" placeholder="E-mail" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-default">
+                            <label>Password</label>
+                            <div class="controls">
+                                <input type="password" name="password" placeholder="Password" class="form-control">
+                            </div>
+                        </div>
+                        <a href="/" class="btn btn-primary">Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

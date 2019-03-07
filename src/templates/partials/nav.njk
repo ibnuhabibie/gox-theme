@@ -1,7 +1,9 @@
 <nav>
     <div class="menu">
         <div class="main-menu">
-            <a class="logo" href="/"></a>
+            <a class="logo" href="/">
+                <span><i data-feather="aperture"></i></span>
+            </a>
             <div class="main-menu-content">
                 <ul>
                     {% for row in menu -%}
@@ -10,7 +12,7 @@
                         class="active"
                         {% endif %}>
                         <a href="{{ row.path }}" title="{{ row.name }}">
-                            <span><i class="fa {{ row.icon }}"></i></span>
+                            <span><i data-feather="{{ row.icon }}"></i></span>
                         </a>
                     </li>
                     {%- endfor %}
@@ -21,21 +23,18 @@
                 <ul>
                     <li>
                         <a href="/" title="System">
-                            <span><i class="fa fa-gear"></i></span>
+                            <span><i data-feather="server"></i></span>
                         </a>
                     </li>
                     <li>
                         <a href="/" title="Extensions">
-                            <span><i class="fa fa-bolt"></i></span>
+                            <span><i data-feather="zap"></i></span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="sub-menu">
-            <span class="menu-toggle">
-                <i class="fa fa-bars"></i>
-            </span>
             <div class="sub-menu-content">
                 <h1 class="page-title">{{ menuTitle }}</h1>
                 {% for row in submenu[menuTitle] -%}
