@@ -9,4 +9,87 @@
         <h1 class="jumbotron-heading">Modal Example</h1>
     </div>
 </section>
+<section class="px-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-transparent">
+                <div class="card-header">
+                    <span class="card-title">Basic Modal</span>
+                </div>
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex officiis inventore consectetur unde cumque deleniti assumenda? Non inventore adipisci sed, pariatur animi voluptates sint dolorem similique illo ex aperiam exercitationem minima tempora fugiat labore necessitatibus, libero, quasi voluptate laudantium corporis cum! Quaerat tenetur blanditiis non fugit nostrum, vel natus esse?</p>
+                    <form class="mb-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <h5><span class="semi-bold">Modal</span> Size</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="size" value="modal-xl">
+                                    <label class="form-check-label">Large</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="size" value="modal-lg" checked>
+                                    <label class="form-check-label">Default</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="size" value="modal-sm">
+                                    <label class="form-check-label">Small</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <h5><span class="semi-bold">Modal</span> Style</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="style" value="modal-light">
+                                    <label class="form-check-label">Borderless</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="style" value="" checked>
+                                    <label class="form-check-label">Default</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <h5><span class="semi-bold">Modal</span> Position</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" value="" checked>
+                                    <label class="form-check-label">Default</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" value="modal-dialog-centered">
+                                    <label class="form-check-label">Center</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" value="modal-side">
+                                    <label class="form-check-label">Right</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="position" value="modal-full">
+                                    <label class="form-check-label">Full</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">Open Modal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -14,6 +14,8 @@ body {
 @import "cards";
 @import "progress";
 @import "table";
+@import "breadcrumb";
+@import "modal";
 
 main {
     display: inline-block;
@@ -22,7 +24,7 @@ main {
     transition: .5s ease;
 
     .main-container {
-        // background: $white;
+        margin-top: 60px;
     }
 
 }
@@ -78,16 +80,19 @@ body.login {
         left: 30px;
 
         .logo {
-            height: auto;
-            max-width: 52px;
-            margin: 0 auto;
-            padding-top: 55px;
-            padding-bottom: 20px;
+            svg {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $white;
+            }
         }
 
         .copy {
             width: auto;
-            padding: 30px 30px 12px;
+            padding-left: 50px;
 
             h1 {
                 display: inline-block;
@@ -120,4 +125,37 @@ body.login {
 
 .badge {
     padding: 8px;
+}
+
+// ERROR
+
+.error-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    h1 {
+        font-weight: bolder;
+        font-size: 42px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            background: $accent;
+            border-radius: 10px;
+            display: inline-block;
+
+            svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
 }

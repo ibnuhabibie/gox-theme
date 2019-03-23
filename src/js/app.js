@@ -73,9 +73,19 @@ $('.card').on('feedback-error', function () {
 
 $(window).resize(function () {
     waitForFinalEvent(function () {
-        $width = $(window).width()
-        console.log($width)
-        if ($width < 1450) $('body').addClass('min')
+        let width = $(window).width()
+        if (width < 1450) $('body').addClass('min')
         else $('body').removeClass('min')
     }, 500)
+})
+
+let modal = $('#modal')
+
+$('form').change(function () {
+    let modalSize = $('input[name=size]:checked').val()
+    let modalStyle = $('input[name=style]:checked').val()
+    let modalPosition = $('input[name=position]:checked').val()
+
+    $(modal).find('.modal-dialog').attr('class', `modal-dialog ${modalSize} ${modalPosition}`)
+    $(modal).attr('class', `modal ${modalStyle} fade`)
 })

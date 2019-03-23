@@ -27,18 +27,22 @@
 <body class="{{ bodyClass }}">
     {% include "partials/nav.njk" %}
     <main class="{{ mainClass }}">
+        <header>
+            <span class="menu-toggle pull-left">
+                <i class="fa fa-bars"></i>
+            </span>
+            <ol class="breadcrumb pull-left py-0 mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active">Data</li>
+            </ol>
+        </header>
         <div class="main-container">
-            <header>
-                <div>
-                    <span class="menu-toggle">
-                        <i class="fa fa-bars"></i>
-                    </span>
-                </div>
-            </header>
             {% block content %}{% endblock %}
         </div>
     </main>
     <script src="/vendor/jquery/js/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="/vendor/feather-icons/js/feather.min.js"></script>
     <script src="/js/app.min.js"></script>
 </body>
